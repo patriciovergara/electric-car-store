@@ -1,0 +1,161 @@
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Monaco', cursive;
+  background-color: #0b1a3f;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.page-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d47a1;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.brand {
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  color: #25e4eeb7;
+}
+
+.nav-menu {
+  list-style: none;
+  display: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffc107;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+/* Mostrar menú en escritorio */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* Filter section */
+.filter-section {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+/* Products grid */
+.products-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Tarjetas */
+.product-card {
+  background-color: #383232;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(251, 250, 249, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-name {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #ffc107;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buy-btn {
+  background-color: #ffc107;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #0b1a3f;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover,
+.buy-btn:focus {
+  background-color: #ffca28;
+}
+
+/* Layout escritorio */
+@media (min-width: 768px) {
+  .products-section {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
